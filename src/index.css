@@ -1,0 +1,387 @@
+:root {
+  color-scheme: light;
+  --bg: #ecf0ff;
+  --surface: #ffffff;
+  --text: #1a1c20;
+  --muted: #5c5f66;
+  --primary: #155cb6;
+  --primary-soft: #d7e2ff;
+  --secondary: #825513;
+  --secondary-warm: #fff4e8;
+  --border: #c4c6d0;
+  --error-bg: #ffdad6;
+  --error-text: #7a1a16;
+  --radius: 12px;
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--primary);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.app-header__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.app-logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.app-logo:hover {
+  color: var(--primary);
+}
+
+.app-tag {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.app-header__user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.app-header__email {
+  font-size: 0.875rem;
+  color: var(--muted);
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-main {
+  flex: 1;
+  padding: 1.5rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page {
+  animation: fade 0.25s ease-out;
+}
+
+.page--center {
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page__head {
+  margin-bottom: 1.5rem;
+}
+
+.page__head h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.875rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.card--warm {
+  background: var(--secondary-warm);
+  border-color: #e8d4c4;
+}
+
+.card--error {
+  background: var(--error-bg);
+  border-color: #e8a8a3;
+  color: var(--error-text);
+}
+
+.card h1,
+.card h2 {
+  margin-top: 0;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table th {
+  background: var(--primary-soft);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--primary);
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+  background: #f8f9ff;
+}
+
+.link {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #e8eaf0;
+  color: var(--text);
+}
+
+.badge--ready {
+  background: #d4edda;
+  color: #1e4d2a;
+}
+
+.badge--new,
+.badge--processed,
+.badge--reprocessing {
+  background: #fff3cd;
+  color: #664d03;
+}
+
+.badge--error,
+.badge--read_file_error,
+.badge--ffmpeg_service_error,
+.badge--transcription_error,
+.badge--transcription_too_short_error,
+.badge--interpretation_error {
+  background: var(--error-bg);
+  color: var(--error-text);
+}
+
+.btn {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  border: none;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn--ghost:hover {
+  background: var(--primary-soft);
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.meta-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+}
+
+.meta-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.threads {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.thread-row {
+  margin-bottom: 1rem;
+}
+
+.thread-row__head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.bar-track {
+  height: 8px;
+  border-radius: 4px;
+  background: rgb(0 0 0 / 8%);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--secondary);
+  transition: width 0.6s ease-out;
+}
+
+.next-box {
+  margin-top: 0.5rem;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.95rem;
+}
+
+.soap {
+  display: flex;
+  flex-direction: column;
+}
+
+.soap-row {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.soap-row--last {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.soap-letter {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2rem;
+  font-style: italic;
+  line-height: 1.1;
+  color: var(--secondary);
+  min-width: 2.5rem;
+}
+
+.soap-text {
+  margin: 0;
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.interpretation {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
