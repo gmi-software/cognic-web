@@ -1,0 +1,12 @@
+---
+description: Aktualizuj CHANGELOG przy zmianach w aplikacji web (newsy na stronę).
+globs: "**/*"
+alwaysApply: false
+---
+
+# Changelog (Cognic Web)
+
+Przy **każdej** zmianie w tym repozytorium istotnej dla użytkownika lub komunikacji (funkcja, UI, naprawa, API używane przez UI), dopisz wpis do **`CHANGELOG.md`** w sekcji `[Unreleased]`, **po polsku**, zwięźle — treść ma służyć także do **newsów na stronie**.
+
+- Sekcje: `### Dodano`, `### Zmieniono`, `### Naprawiono` itd. (Keep a Changelog).
+- Brak `[Unreleased]` — dodaj na górze pliku.

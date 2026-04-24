@@ -121,6 +121,19 @@ a {
   font-size: 1.75rem;
 }
 
+.page__head--row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.page__head--row .btn {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
 .back-link {
   display: inline-block;
   margin-bottom: 1rem;
@@ -375,6 +388,133 @@ a {
   font-family: inherit;
   font-size: 0.95rem;
   line-height: 1.55;
+}
+
+.notice {
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--border);
+}
+
+.notice__title {
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.notice__text {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.notice--info {
+  background: #f0f6ff;
+  border-color: #b8c9e8;
+}
+
+.notice--warn {
+  background: #fff8e6;
+  border-color: #e8d4a8;
+}
+
+.notice--error {
+  background: var(--error-bg);
+  border-color: #e8a8a3;
+}
+
+.notice--error .notice__title {
+  color: var(--error-text);
+}
+
+.transcription__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.transcription__head h2 {
+  margin-bottom: 0;
+}
+
+.diarized__sub {
+  font-size: 0.95rem;
+  margin: 1rem 0 0.75rem;
+  color: var(--text);
+}
+
+.speaker-chips {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.speaker-chip {
+  border-left: 4px solid var(--primary);
+  padding: 0.5rem 0.75rem;
+  background: #f4f6fb;
+  border-radius: 8px;
+}
+
+.speaker-chip--1 {
+  border-left-color: var(--secondary);
+}
+
+.speaker-chip--2 {
+  border-left-color: #2e7d32;
+}
+
+.speaker-chip__name {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.speaker-chip__meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.turn-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.turn-segment {
+  border-left: 4px solid var(--primary);
+  padding: 0.65rem 0 0.65rem 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.turn-segment--1 {
+  border-left-color: var(--secondary);
+}
+
+.turn-segment--2 {
+  border-left-color: #2e7d32;
+}
+
+.turn-segment__speaker {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.turn-segment__meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0.2rem 0 0.5rem;
+}
+
+.turn-segment__text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 @keyframes fade {

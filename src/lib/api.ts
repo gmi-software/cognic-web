@@ -43,8 +43,17 @@ export type SessionAnalysis = {
   soap: SessionAnalysisSoap;
 };
 
+export type TranscriptionTurn = {
+  speaker: string;
+  startSec: number;
+  endSec: number;
+  text: string;
+};
+
 export type ApiSessionDetail = ApiSessionListItem & {
   text?: string | null;
+  /** Segmenty z diarization (backend); opcjonalne. */
+  transcriptionTurns?: TranscriptionTurn[] | null;
   interpretation?: string | null;
   analysis?: SessionAnalysis | null;
   summaryLanguage?: string;
