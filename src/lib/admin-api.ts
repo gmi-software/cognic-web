@@ -146,21 +146,23 @@ export function fetchAdminAnalyticsSummary(
 }
 
 export function fetchAdminSessionDiagnostics(
+  userId: string,
   sessionId: string,
   getAccessToken: () => Promise<string>,
 ) {
   return adminRequest<AdminSessionDiagnostics>(
-    `/v1/admin/sessions/${encodeURIComponent(sessionId)}/diagnostics`,
+    `/v1/admin/users/${encodeURIComponent(userId)}/sessions/${encodeURIComponent(sessionId)}/diagnostics`,
     getAccessToken,
   );
 }
 
 export function postAdminReprocessSession(
+  userId: string,
   sessionId: string,
   getAccessToken: () => Promise<string>,
 ) {
   return adminRequest<{ status: string }>(
-    `/v1/admin/sessions/${encodeURIComponent(sessionId)}/reprocess`,
+    `/v1/admin/users/${encodeURIComponent(userId)}/sessions/${encodeURIComponent(sessionId)}/reprocess`,
     getAccessToken,
     { method: 'POST' },
   );
