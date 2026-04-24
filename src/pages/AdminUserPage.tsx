@@ -84,7 +84,7 @@ export function AdminUserPage() {
     setReprocessId(sessionId);
     setError(null);
     try {
-      await postAdminReprocessSession(sessionId, getToken);
+      await postAdminReprocessSession(userId, sessionId, getToken);
       await reload();
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Reprocess nie powiódł się');

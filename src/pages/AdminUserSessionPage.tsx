@@ -223,7 +223,7 @@ export function AdminUserSessionPage() {
     if (!sessionId) return;
     setError(null);
     try {
-      const d = await fetchAdminSessionDiagnostics(sessionId, getToken);
+      const d = await fetchAdminSessionDiagnostics(userId, sessionId, getToken);
       setDiag(d);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Diagnostyka nieudana');
