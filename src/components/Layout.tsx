@@ -1,8 +1,11 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { Link, Outlet } from 'react-router-dom';
 
+import { isStaffAdmin } from '../lib/admin-gate';
+
 export function Layout() {
   const { user, logout } = useAuth0();
+  const showAdmin = isStaffAdmin(user?.sub);
 
   return (
     <div className="app-shell">
@@ -12,6 +15,11 @@ export function Layout() {
             Cognic
           </Link>
           <span className="app-tag">Web — podgląd sesji</span>
+          {showAdmin ? (
+            <nav className="app-header__nav">
+              <Link to="/admin">Admin</Link>
+            </nav>
+          ) : null}
         </div>
         <div className="app-header__user">
           <span className="app-header__email" title={user?.email}>

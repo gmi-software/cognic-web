@@ -60,6 +60,15 @@ a {
   display: flex;
   align-items: baseline;
   gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.app-header__nav {
+  font-size: 0.9rem;
+}
+
+.app-header__nav a {
+  font-weight: 600;
 }
 
 .app-logo {
@@ -524,4 +533,92 @@ a {
   to {
     opacity: 1;
   }
+}
+
+.btn--link {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  text-decoration: underline;
+}
+
+.btn--link:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-form {
+  max-width: 40rem;
+  margin-top: 1rem;
+}
+
+.admin-form .stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.admin-form__actions {
+  margin-top: 1rem;
+}
+
+.input {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font: inherit;
+}
+
+.input--narrow {
+  width: 5rem;
+  display: inline-block;
+  margin: 0 0.35rem;
+}
+
+.input--date {
+  width: auto;
+  min-width: 11rem;
+  display: inline-block;
+  margin: 0 0.35rem;
+}
+
+.admin-inline-grant {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.admin-user-id {
+  background: var(--surface);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: auto;
+  font-size: 0.85rem;
+}
+
+.admin-session-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.admin-diag-json {
+  font-size: 0.78rem;
+  overflow: auto;
+  max-height: 24rem;
+  margin: 0;
+}
+
+.admin-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
